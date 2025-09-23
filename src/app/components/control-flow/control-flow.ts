@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ControlFlow {
 
-  isParagraphVisible : boolean = false;
+  isParagraphVisible : boolean = true;
 
   startingMonthName: string = "feb";
 
