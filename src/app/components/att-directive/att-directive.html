@@ -21,3 +21,38 @@
         <button class="btn btn-success" (click)="toggleDiv2Color()" >Toggle BgColor</button>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-3">
+        firstName => {{firstName}}
+        <br>
+        {{firstName | uppercase}}
+    </div>
+    <div class="col-3">
+        firstName => {{courseName}}
+        <br>
+        {{courseName | lowercase}}
+    </div>
+    <div class="col-3">
+        firstName => {{courseName}}
+        <br>
+        {{courseName | titlecase }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        rollNoList => {{rollNoList}}
+        <br>
+        {{rollNoList | slice:1:4}}
+    </div>
+        <div class="col-3">
+        studentObj => {{studentObj}}
+        <br>
+        {{studentObj | json}}
+    </div>
+           <div class="col-3">
+        currentDate => {{currentDate}}
+        <br>
+       {{currentDate | date:'short'}}
+    </div>
+</div>

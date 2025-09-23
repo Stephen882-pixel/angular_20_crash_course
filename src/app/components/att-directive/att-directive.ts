@@ -1,9 +1,9 @@
-import { NgClass, NgStyle } from '@angular/common';
+import { DatePipe, JsonPipe, LowerCasePipe, NgClass, NgStyle, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 @Component({
   selector: 'app-att-directive',
-  imports: [NgClass,NgStyle],
+  imports: [NgClass,NgStyle,UpperCasePipe,LowerCasePipe,TitleCasePipe,SlicePipe,JsonPipe,DatePipe],
   templateUrl: './att-directive.html',
   styleUrl: './att-directive.css'
 })
@@ -11,7 +11,21 @@ export class AttDirective implements OnInit,AfterContentInit,AfterContentChecked
 
   div1ClassName = signal<string>("");
 
+  firstName: string = "Stephen";
+
+  courseName: string = "Angular 20 tutorial";
+
+  rollNoList = [11,12,13,14,15,16,17]
+
+  studentObj: any = {
+    name: "Stephen",
+    age: 24,
+    course: "Angular"
+  }
+
   isDiv2Green: boolean = false;
+
+  currentDate: Date = new Date();
 
   constructor() { 
     console.log("Constructor")
