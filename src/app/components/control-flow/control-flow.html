@@ -1,0 +1,85 @@
+<p>control-flow works!</p>
+
+<table>
+
+    <tr>
+        <td>
+            @if(isParagraphVisible == true){
+                <p>This is a sample paragraph</p>
+            }@else {
+                <h3> isParagraphVisible has false value</h3>
+            }
+            
+        </td>
+        <td>
+            <button (click)="showP()" >Show p</button>
+        </td>
+        <td>
+            <button (click)="hipeP()" >Hide p</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @if(startingMonthName == "jan"){
+                <span>January</span>
+            }@else if (startingMonthName == "feb") {
+                <span>February</span>
+            }@else if (startingMonthName == "mar") {
+                <span>March</span>
+            }@else  if(startingMonthName == "apr") {
+                <span>April</span>
+            }@else {
+                <span>Invalid month name</span>
+            }
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="startingMonthName" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                @for(item of cityList;track $index){
+                    <li> {{item}} </li>
+                }
+            </ul>
+        </td>
+        <td>
+            <select name="" id="">
+                @for (item of cityList; track $index) {
+                    <option value="">{{item}}</option>
+                }
+            </select>
+        </td>
+    </tr>
+
+</table>
+
+
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr no</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of studentList; track $index) {
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.city}}</td>
+                <td>
+                    @if(item.isActive == true){
+                        <h6>Active</h6>
+                    }@else {
+                        <h6>Inactive</h6>
+                    }
+            </tr>
+        }
+    </tbody>
+</table>
