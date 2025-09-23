@@ -31,5 +31,9 @@ export const routes: Routes = [
     {
         path:'get-api',
         component:GetApi
+    },
+    {
+        path: 'user',
+        component: User
     }
 ];
