@@ -32,7 +32,7 @@ export class User implements OnInit {
       console.log(Result);
     });
   }
-
+  
   onSaveUser(){
     debugger;
     this.http.post("https://api.freeprojectapi.com/api/GoalTracker/register",this.userObject).subscribe({

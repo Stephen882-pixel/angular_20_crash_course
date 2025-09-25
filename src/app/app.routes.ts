@@ -7,6 +7,7 @@ import { SignalEx } from './components/signal-ex/signal-ex';
 import { AttDirective } from './components/att-directive/att-directive';
 import { GetApi } from './components/get-api/get-api';
 import { ReactiveUser } from './components/reactive-user/reactive-user';
+import { PipeEx } from './components/pipe-ex/pipe-ex';
 
 export const routes: Routes = [
     {
@@ -40,5 +41,9 @@ export const routes: Routes = [
     {
         path:'reactive-user',
         component:ReactiveUser
+    },
+    {
+        path: 'pipe',
+        component:PipeEx
     }
 ];
