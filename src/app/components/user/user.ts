@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Master } from '../../services/master';
 
 @Component({
   selector: 'app-user',
@@ -11,6 +12,11 @@ import { FormsModule } from '@angular/forms';
 export class User implements OnInit {
 
   http = inject(HttpClient);
+  masterService = inject(Master);
+
+  // constructor(private master: Master){
+
+  // }
 
   userList:any[]=[];
 
@@ -24,10 +30,19 @@ export class User implements OnInit {
 
   ngOnInit(): void {
       this.getUsers();
+      debugger;
+      const result = this.masterService.getSum(10,30);
   }
+  
 
   getUsers(){
-    this.http.get("https://api.freeprojectapi.com/api/GoalTracker/getAllUsers").subscribe((Result:any)=>{
+    // this.http.get("https://api.freeprojectapi.com/api/GoalTracker/getAllUsers").subscribe((Result:any)=>{
+    //   this.userList=Result;
+    //   console.log(Result);
+    // });
+    debugger;
+    this.masterService.getUsers().subscribe((Result:any)=>{
+      debugger;
       this.userList=Result;
       console.log(Result);
     });
