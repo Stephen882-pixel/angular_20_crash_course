@@ -6,6 +6,7 @@ import { DataBinding } from './components/data-binding/data-binding';
 import { SignalEx } from './components/signal-ex/signal-ex';
 import { AttDirective } from './components/att-directive/att-directive';
 import { GetApi } from './components/get-api/get-api';
+import { ReactiveUser } from './components/reactive-user/reactive-user';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path: 'user',
         component: User
+    },
+    {
+        path:'reactive-user',
+        component:ReactiveUser
     }
 ];
