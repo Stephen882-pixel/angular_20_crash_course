@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-user',
@@ -15,10 +15,10 @@ export class ReactiveUser implements OnInit {
 
   userForm: FormGroup = new FormGroup({
     userId: new FormControl(0),
-    emailId: new FormControl(""),
+    emailId: new FormControl("",[Validators.required,Validators.minLength(5)]),
     fullName: new FormControl(""),
     mobileNo: new FormControl(""),
-    password: new FormControl("")
+    password: new FormControl("",Validators.required)
   })
 
   ngOnInit() {

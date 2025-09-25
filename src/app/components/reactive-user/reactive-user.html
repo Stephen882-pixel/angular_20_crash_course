@@ -47,10 +47,27 @@
                     <div class="col-6">
                         <label for="">Email</label>
                         <input type="text" formControlName="emailId" class="form-control" >
+                        @if(userForm.controls['emailId'].touched){
+                            <div class="text-danger">
+                            @if(userForm.controls['emailId'].errors?.['required']){
+                                <span>This is required</span>
+                            }
+                            @if (userForm.controls['emailId'].errors?.['minlength']) {
+                                <span>Min 5 characters needed</span>
+                            }                           
+                        </div>
+                        }
                     </div>
                      <div class="col-6">
                         <label for="">Password</label>
                         <input type="text" formControlName="password" class="form-control" >
+                        @if(userForm.controls['password'].touched){
+                            <div class="text-danger">
+                            @if(userForm.controls['emailId'].errors?.['required']){
+                                <span>This is required</span>
+                            }
+                        </div>
+                        }
                     </div>
                      <div class="col-6">
                         <label for="">Full Name</label>
