@@ -1,0 +1,94 @@
+<main class="login-wrap" aria-labelledby="login-heading">
+<!-- Left: Illustration / marketing -->
+<section class="illustration" aria-hidden="false">
+    <div class="box">
+    <div class="brand" aria-hidden="true">
+        <div class="logo">AC</div>
+        <div>
+        <div style="font-weight:700">Acme<span style="color:var(--accent)">App</span></div>
+        <div class="small-note">Secure portal</div>
+        </div>
+    </div>
+
+    <h2 id="login-heading" class="h4">Welcome back</h2>
+    <p class="lead">Login to access your dashboard and manage your projects. Fast, secure, and simple.</p>
+
+    <ul class="mb-0" style="list-style:none;padding-left:0;color:var(--muted);">
+        <li class="mb-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Two-factor authentication available</li>
+        <li class="mb-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Minimal latency and strong encryption</li>
+        <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Built for teams & individuals</li>
+    </ul>
+    </div>
+</section>
+
+<!-- Right: Login form -->
+<section>
+    <form class="card card-login" method="post" novalidate onsubmit="return handleSubmit(event)" aria-describedby="form-note">
+    <div class="mb-3 d-flex justify-content-between align-items-start">
+        <div>
+        <h1 class="h4 mb-0">Login to your account</h1>
+        <div id="form-note" class="small-note">Enter your credentials below.</div>
+        </div>
+        <!-- <img src="https://via.placeholder.com/48x48.png?text=User" alt="" style="width:48px;height:48px;border-radius:10px" /> -->
+    </div>
+
+    <!-- Social logins -->
+    <div class="mb-3">
+        <div class="row g-2">
+        <div class="col-md-6">
+            <button type="button" class="btn btn-outline-secondary social-btn" aria-label="Sign in with Google">
+            <i class="bi bi-google" aria-hidden="true"></i> Google
+            </button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-outline-secondary social-btn" aria-label="Sign in with GitHub">
+            <i class="bi bi-github" aria-hidden="true"></i> GitHub
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <div class="divider mb-3" role="separator" aria-hidden="true">or</div>
+
+    <!-- Email -->
+    <div class="mb-3">
+        <label for="email" class="form-label">Email or username</label>
+        <input id="email" name="userName" type="text" [(ngModel)]="loginObj.userName" class="form-control" placeholder="you@company.com" required autocomplete="username" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+    </div>
+
+    <!-- Password w/ show toggle -->
+    <div class="mb-3">
+        <label for="password" class="form-label d-flex justify-content-between">
+        <span>Password</span>
+        <a href="#" class="small-note" style="text-decoration:none;">Forgot password?</a>
+        </label>
+        <div class="input-group">
+        <input id="password" name="password" [(ngModel)]="loginObj.password" type="password" class="form-control" placeholder="••••••••" required autocomplete="current-password" minlength="6" aria-describedby="pwHelp">
+        <button type="button" class="btn btn-outline-secondary" id="togglePw" aria-label="Show password">
+            <i class="bi bi-eye"></i>
+        </button>
+        <div class="invalid-feedback">Password must be at least 6 characters.</div>
+        </div>
+    </div>
+
+    <!-- Remember & submit -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="1" id="remember" name="remember">
+        <label class="form-check-label small-note" for="remember">Remember me</label>
+        </div>
+        <div>
+        <button type="button" class="btn btn-primary px-4" id="signInBtn" (click)="onLogin()" >
+            <i class="bi bi-box-arrow-in-right me-1" aria-hidden="true"></i> Login
+        </button>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <p class="small-note mb-0">Don't have an account? <a href="#" class="fw-semibold">Sign Up</a></p>
+    </div>
+    </form>
+</section>
+</main>
