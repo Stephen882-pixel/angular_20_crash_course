@@ -1,9 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Master {
+
+  appName: string = 'Angula App';
 
   constructor(private http:HttpClient){
 

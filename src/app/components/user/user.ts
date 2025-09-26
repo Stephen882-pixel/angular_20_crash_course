@@ -32,6 +32,7 @@ export class User implements OnInit {
       this.getUsers();
       debugger;
       const result = this.masterService.getSum(10,30);
+      const appData = this.masterService.appName;
   }
   
 
